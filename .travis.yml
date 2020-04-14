@@ -7,8 +7,9 @@ before_install:
 script: ./.travis-build.sh
 
 jdk:
-  - oraclejdk8
   - openjdk8
+  - oraclejdk11
+  - openjdk11
 
 git:
   depth: 3
