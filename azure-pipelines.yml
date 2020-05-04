@@ -1,0 +1,32 @@
+# Workaround for https://status.dev.azure.com/_event/179641421
+trigger:
+  branches:
+    include:
+    - '*'
+pr:
+  branches:
+    include:
+    - '*'
+
+
+jobs:
+
+- job: test_daikon_staging_jdk8
+  pool:
+    vmImage: 'ubuntu-latest'
+  container: mdernst/daikon-ubuntu-jdk8:latest
+  steps:
+  - checkout: self
+    fetchDepth: 25
+  - bash: ./run-test-distribution.sh
+    displayName: run-test-distribution.sh
+
+- job: test_daikon_staging_jdk11
+  pool:
+    vmImage: 'ubuntu-latest'
+  container: mdernst/daikon-ubuntu-jdk11:latest
+  steps:
+  - checkout: self
+    fetchDepth: 25
+  - bash: ./run-test-distribution.sh
+    displayName: run-test-distribution.sh
