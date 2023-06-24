@@ -7,4 +7,4 @@ curl --fail -O https://raw.githubusercontent.com/codespecs/daikon/master/scripts
 
 export DAIKONBASEURL=http://plse.cs.washington.edu/staging-daikon
 
-sh test-distribution.sh
+bash test-distribution.sh
